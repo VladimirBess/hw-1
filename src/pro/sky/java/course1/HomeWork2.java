@@ -3,6 +3,8 @@ package pro.sky.java.course1;
 public class HomeWork2 {
     public static void main(String[] args) {
         // 7 Задание сделаю сам позже, не хватило времени (((
+        System.out.println("------------ Задание 7 ------------");
+        Ex7();
         System.out.println("------------ Задание 6 ------------");
         Ex6();
         System.out.println("------------ Задание 5 ------------");
@@ -17,6 +19,15 @@ public class HomeWork2 {
         Ex1();
     }
 
+    private static void Ex7() {
+        int age = 25;
+        int salary = 60_000;
+        int wantedSum = 300_000;
+        double baseRate =  0.1;
+        int limit;
+
+    }
+
     private static void Ex1() {
         int clientOS = 1;
         if (clientOS == 0) {
@@ -28,15 +39,15 @@ public class HomeWork2 {
 
     private static void Ex2() {
         int clientOS = 0;
-        int clientDeviceYear = 2015;
+        int clientDeviceYear = 2016;
         if (clientOS == 1) {
             System.out.println("Установите версию приложения для Android по ссылке");
-            if (clientOS == 1 && clientDeviceYear < 2019) {
+            if (clientDeviceYear < 2019) {
                 System.out.println("Установите lite-версию приложения для Android по ссылке");
             }
         } else {
             System.out.println("Установите версию приложения для iOS по ссылке");
-            if (clientOS == 0 && clientDeviceYear < 2019) {
+            if (clientDeviceYear < 2019) {
                 System.out.println("Установите lite-версию приложения для iOS по ссылке");
             }
         }
@@ -53,15 +64,14 @@ public class HomeWork2 {
 
     private static void Ex4() {
         int deliveryDistance = 95;
-        if (deliveryDistance <= 20) {
-            System.out.println("Доставка займет 24 часа");
-        } else {
-            if (deliveryDistance > 20 && deliveryDistance <= 60) {
-                System.out.println("Доставка займет 48 часов");
-            } else {
-                System.out.println("Доставка займет до трех дней");
-            }
+        int delieryDays = 1;
+        if (deliveryDistance > 20) {
+            delieryDays++;
         }
+        if (deliveryDistance > 60) {
+            delieryDays++;
+        }
+        System.out.println("Доставка за " + delieryDays + " д");
     }
 
     private static void Ex5() {
@@ -89,25 +99,23 @@ public class HomeWork2 {
                 break;
             default:
                 System.out.println("не корректно введен месяц =)");
-                break;
         }
     }
 
     private static void Ex6() {
         int age = 20;
-        int salary = 30000;
-        if (age >= 23 && salary < 50000) {
-            System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 3 + " рублей");
-        } else if (age >= 23 && salary >= 50000 && salary <= 80000) {
-            System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 3 * 1.2 + " рублей");
-        } else if (age >= 23 && salary > 80000) {
-            System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 3 * 1.5 + " рублей");
-        } else if (age < 23 && salary < 50000) {
-            System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 2 + " рублей");
-        } else if (age < 23 && salary >= 50000 && salary <= 80000) {
-            System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 2 * 1.2 + " рублей");
-        } else if (age < 23 && salary > 80000) {
-            System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 2 * 1.5 + " рублей");
+        int salary = 55000;
+        int limit;
+        if (age >= 23) {
+            limit = salary * 3;
+        } else {
+            limit = salary * 2;
         }
+        if (salary > 80000) {
+            limit *= 1.5;
+        } else if (salary > 50000) {
+            limit *= 1.2;
+        }
+        System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + limit + " руб.");
     }
 }
