@@ -11,9 +11,31 @@ public class HomeWork3 {
         System.out.println("----------- Задание 4 -----------");
         ex4();
         System.out.println("----------- Задание 5 -----------");
-        int x = 0;
-        int y =1;
+        ex5();
+    }
 
+    private static void ex5() {
+        int x = 0;
+        int y = 1;
+        do {
+            System.out.println(x);
+            y = x + y;
+            if (y < 100) {
+                System.out.println(y);
+            }
+            x = x + y;
+        } while (x < 100);
+
+        // int fibonacci = 1;
+        // int a = 0;
+        // int b = 0;
+        //     do {
+        //      a = b;
+        //      b = fibonacci;
+        //     fibonacci = a + b;
+        //            System.out.println(fibonacci);
+        //     } while (fibonacci < 100);
+        // Сначала сделал а потом понял, что значение 0 не работает... а удалять жалко))
     }
 
     private static void ex4() {
